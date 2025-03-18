@@ -38,8 +38,6 @@ Run:
 ```bash
 python example.py
 ```
-Or run with docker
-
 
 ## Running Tests
 Run:
