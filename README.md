@@ -25,7 +25,11 @@ risk and significant proximity of the earthquakes
 - python == 3.13.2
 - pip == 23.2.1
 
-Please note lower versions of Python may work, but your mileage may vary
+or
+
+- docker == 27.5.1
+
+Please note lower versions of these Python may work, but mileage may vary
 
 ## Installing dependencies
 From the root of this directory run
@@ -34,22 +38,31 @@ pip install -r requirements.txt
 ```
 
 ## Running the examples
-Run:
+To run example 1, please run:
 ```bash
-python example.py
+python example_1.py
+```
+
+To run example 2, please run:
+```bash
+python example_2.py
+```
+
+Or, to run both examples with Docker, use:
+```bash
+docker run $(docker build -q .)
 ```
 
 ## Running Tests
-Run:
+To run the unittests, run:
 ```bash
-python -m unittest discover -s ./ -p 'test.py'
+python -m unittest discover -s ./ -p 'test_*.py'
 ```
+
+Please note that tests can only be run with a local install and not with docker
 
 ## Notes
 - The application currently uses earthquake data for the past week.
 These were added as variables so can be adjusted as required. If more historical
 data was needed, this would then be paginated when fetching data.
-- The approach taken was to use as much pure Python as possible rather
-that relying on libraries
-- There is no error handling if the API calls to the GeoLookup or USGS APIs fails, in
-a production app this would have a retry/backoff algorithm to be defensive
+- Package management is currently using pip for simplicity and easy compatibility with Docker.
