@@ -97,7 +97,7 @@ def __us_state_name_to_code_map() -> Dict[str, str]:
 def us_state_code_to_name(state_code: str) -> str:
     """
     Lookup a US State code to from its name.
-    For example, 'California' would return 'CA'
+    For example, 'CA' would return 'California'
     :param state_code: str - Code of US State
     :return: str - Name of US State
     """
@@ -108,8 +108,8 @@ def us_state_name_to_code(state_name: str) -> str:
     """
     Lookup a US State name to from its code.
     For example, 'California' would return 'CA'
-    :param state_name: str - name of US state
-    :return: str - code of US State
+    :param state_name: str - Name of US state
+    :return: str - Code of US State
     """
     return __us_state_name_to_code_map()[state_name]
 
